@@ -14,9 +14,9 @@ function App() {
   return (
     <>
      <div>こんにちは！</div>
-     <p>Countr: {count}</p>
+     <p>Counter: {count}</p>
      <button onClick={() => setCount(count + 1)}>Increment count</button>
-     <IncrementButton />
+     <IncrementButton handleClick={handleClick}/>
     </>
   )
 }
