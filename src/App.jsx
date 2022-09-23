@@ -7,14 +7,14 @@ function App() {
   console.log("render App");
 
   // useStateの利用
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
   const [count1, setCount1] = useState(0);
   const [count2, setCount2] = useState(0);
 
   // useCallbackの利用
-  const handleClick = useCallback(() => {
-    console.log("click");
-  }, []);
+  // const handleClick = useCallback(() => {
+  //   console.log("click");
+  // }, []);
 
   // 実行関数
   const double = count => {
@@ -23,7 +23,21 @@ function App() {
     return count * 2;
   }
 
-  const doubleCount = useMemo(() => double(count2), [count2]);
+  // const doubleCount = useMemo(() => double(count2), [count2]);
+
+
+  const DoubleCounter = useMemo(() => {
+    console.log("render DoubleCounter");
+    const doubleCount = double(count2);
+
+    return (
+      <p>
+        Counter: {count2}, {doubleCount}
+      </p>
+    );
+  }, [count2]);
+
+
 
   return (
     <>
@@ -34,14 +48,13 @@ function App() {
      <button onClick={handleClick}>logging</button> */}
      <br></br>
      <p>useMemoの利用</p>
-     <h2>Increment(fast)</h2>
-     <p>Counter1: {count1}</p>
-     <button onClick={() => setCount1(count1 + 1)}>Increment(fast)</button>
-     <h2>Increment(slow)</h2>
-     <p>
-       Counter2: {count2}, {doubleCount}
-     </p>
-     <button onClick={() => setCount2(count2 + 1)}>Increment(slow)</button>
+     <h2>Increment count1</h2>
+     <p>Counter: {count1}</p>
+     <button onClick={() => setCount1(count1 + 1)}>Increment count1</button>
+
+     <h2>Increment count2</h2>
+     <p>Counter: {count2}</p>
+     <button onClick={() => setCount2(count2 + 1)}>Increment count2</button>
     </>
   )
 }
