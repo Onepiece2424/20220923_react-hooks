@@ -17,6 +17,7 @@ function App() {
      <p>Counter: {count}</p>
      <button onClick={() => setCount(count + 1)}>Increment count</button>
      <IncrementButton handleClick={handleClick}/>
+     <button onClick={handleClick}>logging</button>
     </>
   )
 }
