@@ -5,7 +5,7 @@ const UseEffectExample = () => {
 
   useEffect(() => {
     console.log('useEffect ran');
-  }, [])
+  }, [count])
 
   return (
     <div>
