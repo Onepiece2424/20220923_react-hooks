@@ -1,7 +1,7 @@
-import React, { useState, useCallback, useMemo } from "react";
+// import React, { useState } from "react";
 import './App.css';
-import IncrementButton from "./components/IncrementButton";
-
+// import IncrementButton from "./components/IncrementButton";
+import  UseEffectExample from "./components/UseEffectExample";
 
 function App() {
   // 初回レンダリング時に実行されるコンソールテキスト
@@ -40,14 +40,15 @@ function App() {
 
 
   // useRefを使用したDOMの参照
-  const inputEl = useState(null);
-  const [text, setText] = useState("");
-  const handleClick = () => {
-    setText(inputEl.current.value);
-  };
+  // const inputEl = useState(null);
+  // const [text, setText] = useState("");
+  // const handleClick = () => {
+  //   setText(inputEl.current.value);
+  // };
 
-  console.log("レンダリング！！！");
+  // console.log("レンダリング！！！");
 
+  // useEffect使用時のuseState
 
 
   return (
@@ -68,9 +69,11 @@ function App() {
      <button onClick={() => setCount2(count2 + 1)}>Increment count2</button> */}
 
 
-     <input ref={inputEl} type="text" />
+     {/* <input ref={inputEl} type="text" />
      <button onClick={handleClick}>set text</button>
-     <p>テキスト：{text}</p>
+     <p>テキスト：{text}</p> */}
+
+     <UseEffectExample />
     </>
   )
 }
